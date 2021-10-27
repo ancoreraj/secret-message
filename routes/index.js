@@ -45,7 +45,7 @@ router.get('/inbox/:inboxSecret', async (req, res) => {
 
     const findUser = await User.findOne({ inboxSecret })
 
-    let whatsappLink = `whatsapp://send?text=Send Secret Message to ${findUser.name}. I will never know who sent me this message. Its really fun. Try here https://sendsecretmessage.herokuapp.com/${findUser.messageSecret}`
+    let whatsappLink = `whatsapp://send?text=Send Secret Message to ${findUser.name}. I will never know who sent me this message. Its really fun. Try here https://sendsecretmessage.herokuapp.com/message/${findUser.messageSecret}`
 
     console.log(whatsappLink)
 
