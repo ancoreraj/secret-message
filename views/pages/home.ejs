@@ -1,0 +1,36 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+
+    <div class="card card-body text-center">
+      
+          <div class="d-flex">
+            <h3 class="m-auto" style="font-size: 50px; margin-bottom: 0;">Secret Message 2021</h3>
+          </div>
+
+          <h6>Get anonymous feedback from your friends, coworkers and Fans.</h6>
+          <h1 class="m-3"><i class="fas fa-user-secret fa-3x"></i></h1>
+          <h6>You can never know who messaged you!</h6>
+
+          <% if(flashMsg){ %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= flashMsg %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <% } %>
+
+          <div class="form-group">
+            <form action="/create-link" method="post">
+              <div class="form-floating mb-3">
+                <h3 for="floatingInput">Enter your name and create link</h3>
+                <input type="text" class="form-control" id="floatingInput" placeholder="NickName" name="name" required>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-outline-primary">Create Your Link</button>
+              </div>
+            </form>
+          </div>
+    </div>
+  </div>
+</div>

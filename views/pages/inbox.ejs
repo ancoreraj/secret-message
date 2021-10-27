@@ -1,0 +1,63 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+
+    <div class="card card-body text-center">
+      <div class="d-flex">
+        <h3 class="m-auto" style="font-size: 50px; margin-bottom: 0;">Secret Message 2021</h3>
+      </div>
+      <h1 class="m-3"><i class="fas fa-user-secret fa-3x"></i></h1>
+
+      <div class="form-group">
+        <a href="#messages" class="mb-3 mt-2 btn btn-outline-primary">My messages</a>
+
+        <div class="form-floating mb-3">
+        <p>Share this link with your friends and collect anonymous messages....</p>
+
+
+          <input type="text" class="form-control" id="messageLink"
+            value="http://localhost:3000/message/<%=findUser.messageSecret%>" required>
+
+          <button type="button" class="mt-3 btn btn-outline-primary" onclick="myFunction()"><i
+              class="fas fa-copy mr-2"></i>Copy to
+            clipboard
+          </button>
+
+
+        </div>
+        <div class="d-grid gap-2" style="color: white !important;">
+          <a href="<%=whatsappLink%>" class="btn btn-outline-success"><i class="fab fa-whatsapp mr-2"></i>Add to
+            Story</a>
+        </div>
+
+        <p class="mt-5"><span>Your inbox Link (Do not share with anyone) - </span>http://localhost:3000/message/<%=findUser.inboxSecret%>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mt-2" id="messages">
+  <div class="col-md-6 m-auto">
+
+    <div class="card card-body text-center">
+      <div class="d-flex">
+        <h1 class="m-auto" style="margin-bottom: 0;">Your Messeges</h1>
+      </div>
+
+      <div class="m-auto">
+
+        <%findUser.messages.forEach((msg)=>{%>
+          <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+
+            <div class="card-body">
+              <p class="card-text">
+                <%=msg%>
+              </p>
+            </div>
+          </div>
+          <%})%>
+      </div>
+    </div>
+  </div>
+</div>
