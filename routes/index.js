@@ -13,7 +13,7 @@ router.post('/create-link', (req, res) => {
 
   try {
     const name = req.body.name
-    const inboxSecret = name + generateUID()
+    const inboxSecret = generateUID()
     const messageSecret = generateUID()
 
     const newUser = new User({
